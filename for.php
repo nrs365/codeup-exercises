@@ -24,17 +24,15 @@ $max = trim(fgets(STDIN));
 	}	
 fwrite(STDOUT, "Please input a number for an increment ");
 $increment = trim(fgets(STDIN));
-	if (!is_numeric($increment)) {
-		
+	if (empty($increment)){
+		$increment = 1;
+	}else if (!is_numeric($increment)) {
 		do {
 		fwrite(STDOUT, "Please input only numbers\n");
 		$increment = (trim(fgets(STDIN)));
 		} while (!is_numeric($increment));
 	}	
-
-	if (empty($increment)){
-		$increment = 1;
-	}
+	
 
 
 // if ($argc == 4){
