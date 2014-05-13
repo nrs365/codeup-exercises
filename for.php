@@ -5,17 +5,37 @@
 //  	fwrite(STDOUT, "Please input numbers only ");
 
 fwrite(STDOUT, "Please input a number for beginning range ");
-$min = is_numeric(trim(fgets(STDIN)));
+$min = trim(fgets(STDIN));
+	if (!is_numeric($min)) {
+		do {
+		fwrite(STDOUT, "Please input only numbers\n");
+		$min = (trim(fgets(STDIN)));
+		} while (!is_numeric($min));
+	}	
+
 
 fwrite(STDOUT, "Please input a number for a maximum range ");
-$max = is_numeric(trim(fgets(STDIN)));
-
+$max = trim(fgets(STDIN));
+	if (!is_numeric($max)) {
+		do {
+		fwrite(STDOUT, "Please input only numbers\n");
+		$max = (trim(fgets(STDIN)));
+		} while (!is_numeric($max));
+	}	
 fwrite(STDOUT, "Please input a number for an increment ");
-$increment = is_numeric(trim(fgets(STDIN)));
+$increment = trim(fgets(STDIN));
+	if (!is_numeric($increment)) {
+		
+		do {
+		fwrite(STDOUT, "Please input only numbers\n");
+		$increment = (trim(fgets(STDIN)));
+		} while (!is_numeric($increment));
+	}	
+
 	if (empty($increment)){
 		$increment = 1;
 	}
-if (!is_numeric($min) && !is_numeric($max) && !is_numeric($increment))
+
 
 // if ($argc == 4){
 // 	$min = $argv[1];
