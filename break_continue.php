@@ -15,12 +15,18 @@
 // echo "done!\n";
 
 // Create a for loop that shows all even numbers between 1 and 100 using continue.
+// for ($i = 1; $i <= 100; $i++){
+// 	if($i % 2 == 1){ // has to be with a remainder of one b/c it'll sort odd; if remainder is 0 then it'll continue through without echoing anything out;
+// 		continue;
+// 	}echo $i . PHP_EOL;
+// }
+
 
 // Create another for loop that counts from 1 to 100, but stops after 10 using break.
-
 for ($i = 1; $i <= 100; $i++){
-	if($i % 2 == 1){ // has to be with a remainder of one b/c it'll sort odd; if remainder is 0 then it'll continue through without echoing anything out;
-		continue;
-	} echo $i . PHP_EOL;
+	echo $i . PHP_EOL;
+	if ($i == 10){
+		break;
+	}
 }
 
