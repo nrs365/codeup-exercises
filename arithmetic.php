@@ -4,7 +4,7 @@ function add($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
 		echo $a + $b;
 	} else {
-		echo 'ERROR: both $a and $b should be numbers';
+		echo "ERROR: both $a and $b should be numbers";
 	}
 	echo PHP_EOL;
 
@@ -14,7 +14,7 @@ function subtract($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
 		echo $a - $b;
 	} else {
-		echo 'ERROR: both $a and $b should be numbers';
+		echo "ERROR: both $a and $b should be numbers";
 	}
 	echo PHP_EOL;
 }
@@ -23,7 +23,7 @@ function multiply($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
 		echo $a * $b;
 	} else {
-		echo 'ERROR: both $a and $b should be numbers';
+		echo "ERROR: both $a and $b should be numbers";
 	}
 	echo PHP_EOL;
 }
@@ -35,7 +35,7 @@ function divide($a, $b) {
 	if (is_numeric($a) && is_numeric($b)) {
 		echo $a / $b;
 	} else {
-		echo 'ERROR: both $a and $b should be numbers';
+		echo "ERROR: both $a and $b should be numbers";
 	}
 	echo PHP_EOL;
 }
@@ -44,7 +44,7 @@ function remainder($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
 		echo $a % $b;
 	} else {
-		echo 'ERROR: both $a and $b should be numbers';
+		echo "ERROR: both $a and $b should be numbers";
 	}
 	echo PHP_EOL;
 }
@@ -60,7 +60,7 @@ function remainder($a, $b) {
 // 	echo PHP_EOL;
 // }
 
-add (100, 100);
+add ("cat", 100);
 subtract('sleepy', 50);
 multiply(10, 10);
 divide(100, 0);
