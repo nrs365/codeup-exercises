@@ -29,7 +29,10 @@ function multiply($a, $b) {
 }
 
 function divide($a, $b) {
-	if (is_numeric($a) && is_numeric($b)){
+	if ($b == 0){
+		echo "You cannot divide by zero\n";
+	}
+	if (is_numeric($a) && is_numeric($b)) {
 		echo $a / $b;
 	} else {
 		echo 'ERROR: both $a and $b should be numbers';
@@ -60,7 +63,7 @@ function remainder($a, $b) {
 add (100, 100);
 subtract('sleepy', 50);
 multiply(10, 10);
-divide(100, 2);
+divide(100, 0);
 remainder(5,2)
 //compare(42, '42', true)
 
