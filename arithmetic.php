@@ -1,52 +1,48 @@
 <?php
 
-function add($a, $b) {
+function numeric_check($a, $b, $dividing = false){
 	if (is_numeric($a) && is_numeric($b)){
-		echo $a + $b;
+		if($b === 0 && $dividing){
+			echo "You cannot divide by zero\n";
+			return false;
+		}
+		return true;
 	} else {
-		echo "ERROR: both $a and $b should be numbers";
+		echo "Error! Both {$a} and {$b} was not a number\n";// must use echo to stay in the function
+		return false;
 	}
-	echo PHP_EOL;
+}
 
+
+function add($a, $b) {
+	if (numeric_check($a, $b))
+	{
+		return $a + $b . PHP_EOL;
+	}
+	//echo PHP_EOL;
 }
 
 function subtract($a, $b) {
-	if (is_numeric($a) && is_numeric($b)){
-		echo $a - $b;
-	} else {
-		echo "ERROR: both $a and $b should be numbers";
+	if (numeric_check($a, $b)){
+		return $a - $b . PHP_EOL;
 	}
-	echo PHP_EOL;
 }
 
 function multiply($a, $b) {
-	if (is_numeric($a) && is_numeric($b)){
-		echo $a * $b;
-	} else {
-		echo "ERROR: both $a and $b should be numbers";
+	if (numeric_check($a, $b)){
+		return $a * $b . PHP_EOL;
 	}
-	echo PHP_EOL;
 }
 
 function divide($a, $b) {
-	if ($b == 0){
-		echo "You cannot divide by zero\n";
+	if (numeric_check($a, $b, true)){
+		return $a / $b . PHP_EOL;
 	}
-	if (is_numeric($a) && is_numeric($b)) {
-		echo $a / $b;
-	} else {
-		echo "ERROR: both $a and $b should be numbers";
-	}
-	echo PHP_EOL;
 }
 
 function remainder($a, $b) {
-	if (is_numeric($a) && is_numeric($b)){
-		echo $a % $b;
-	} else {
-		echo "ERROR: both $a and $b should be numbers";
-	}
-	echo PHP_EOL;
+	numeric_check($a, $b);
+	return $a % $b . PHP_EOL;
 }
 
 // function compare($a, $b, $strict = true) { //$a mixed, $b mixed, $strict bool, set to default $strict = true)
@@ -60,11 +56,12 @@ function remainder($a, $b) {
 // 	echo PHP_EOL;
 // }
 
-add ("cat", 100);
-subtract('sleepy', 50);
-multiply(10, 10);
-divide(100, 0);
-remainder(5,2)
+echo add (365, 3);
+echo subtract(10, 50);
+echo multiply(10, 10);
+echo divide(100, 0);
+
+// remainder(5,2)
 //compare(42, '42', true)
 
 // function inspect($variable = null, $dump = true){
@@ -89,5 +86,5 @@ remainder(5,2)
 // adder(1, adder(1,2));
 // adder(pi(), pi())
 // adder (pi(), false);
-// adder("2+3", 3);//eror
+
 ?>
