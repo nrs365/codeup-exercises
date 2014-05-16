@@ -12,7 +12,7 @@ function check($a){
 		return " is EMPTY\n";
 	}
 }
-
+unset($nothing);
 // TEST: If var $nothing is set, display '$nothing is SET'
 echo '$nothing' . check($nothing);
 // TEST: If var $nothing is empty, display '$nothing is EMPTY'
