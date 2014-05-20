@@ -5,7 +5,7 @@ function array_has_value($query, $names) {
 	if ($name === false) {
 		return false;
 	} else {
-			return true;
+		return true;
 	
 	}
 }	
@@ -26,5 +26,5 @@ function array_common_count($array1, $array2) {
 $names = ['Dana', 'Mike', 'Amy', 'Adam', 'Tina'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
-//var_dump(array_has_value($query, $names));
-var_dump(array_common_count($names, $compare));
+//var_dump(array_has_value($query, $names)) . PHP_EOL;
+echo array_common_count($names, $compare) . PHP_EOL;
