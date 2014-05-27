@@ -31,7 +31,11 @@ var_dump($deck);
 // determine if a card is an ace
 // return true for ace, false for anything else
 function cardIsAce($card) {
-  // todo
+  if ($card ==='A') { 
+  	return true;
+  } else {
+  	return false;
+  }	
 }
 
 // determine the value of an individual card (string)
@@ -39,14 +43,41 @@ function cardIsAce($card) {
 // face cards are worth 10
 // numeric cards are worth their value
 function getCardValue($card) {
-  // todo
-}
+	$theCard = explode(' ', $card); 
+    //$theCard = str_split($card); 
+	$total = 0;
+	$number_of_aces = 0;
+	switch($theCard[0]) { 
+    	case '10':
+        case 'K':
+        case 'Q':
+        case 'J':
+       	    $total += 10; 
+        	break; 
+        case 'A': 
+        	$total += 11; 
+        	$number_of_aces++;    
+        	break;
+        default:
+        	$total += $theCard[0];
+        	break; 
+    }
+    return $total;
+} 
+
 
 // get total value for a hand of cards
 // don't forget to factor in aces
 // aces can be 1 or 11 (make them 1 if total value is over 21)
 function getHandTotal($hand) {
-  // todo
+  $total = getCardValue($hand);
+  $number_of_aces = 0;
+
+  while ($total > 21 && $number_of_aces > 0) {
+        $number_of_aces -= 1;
+        $total -= 10; 
+    } 
+    return $total; 
 }
 
 // draw a card from the deck into a hand
